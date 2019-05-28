@@ -19,26 +19,28 @@ var VALUES = {
 }
 
 var config = {
-    type: Phaser.AUTO,
-    scale: {
+    type: Phaser.AUTO,  // the rendered to use (AUTO means 'try WebGL')
+    scale: {            // how the game DIV container will be aligned and scaled
         mode: Phaser.Scale.FIT,
         parent: 'game-container',
         autoCenter: Phaser.Scale.CENTER_BOTH,
         width: 1280,
         height: 720
     },
-    physics: {
+    physics: {          // we will use the ARCADE physcis engine
         default: 'arcade',
         arcade: {
             debug: false
         }
     },
-    scene: {
+    scene: {            // our scene will be accessed by three life cycle funtions
         preload: preload,
         create: create,
         update: update
     }    
 }
+
+var game = new Phaser.Game(config);
 
 /* GAME OBJECTS */
 var ship
@@ -69,8 +71,6 @@ var shieldRect
 var graphics
 var gameover
 var gameoverText
-
-var game = new Phaser.Game(config);
 
 function preload () {
     this.load.image('target', 'assets/target.png');
