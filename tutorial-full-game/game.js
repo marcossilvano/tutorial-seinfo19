@@ -42,22 +42,22 @@ var config = {
 
 var game = new Phaser.Game(config);
 
-/* GAME OBJECTS */
+// single game objects
 var ship
 var cannon
 var target
-
+// groups (lists) of game objects
 var bullets
 var enemies
 var enemyBullets
 var launchCounter
 var launchTime
 var explosions
-
+var asteroids
+// game objects for backgrounds
 var bg1
 var parallax = []
 
-var asteroids
 var cursors
 var keyEnter
 
